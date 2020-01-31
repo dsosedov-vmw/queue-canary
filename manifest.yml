@@ -1,0 +1,6 @@
+---
+applications:
+- name: bdc-q-canary
+  memory: 512M
+  instances: 1
+  path: src/QApp.Web/bin/Release/netcoreapp3.1/publish
