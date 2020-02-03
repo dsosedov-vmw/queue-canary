@@ -20,6 +20,20 @@ namespace QApp.Web.Controllers
 
         public IActionResult Index()
         {
+            var billingQ = new MessageQueue();
+
+            billingQ.Path = @".\private$\Bills";
+
+            if (MessageQueue.Exists(billingQ.Path))
+            {
+                //Exists
+            }
+            else
+            {
+                // Creates the new queue named "Bills"
+                MessageQueue.Create(billingQ.Path);
+            }
+
             return View();
         }
 
